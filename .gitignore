@@ -1,0 +1,23 @@
+# Archivos temporales de Node.js
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Variables de entorno
+.env
+.env.local
+.env.production
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Uploads (imágenes subidas por usuarios)
+api/uploads/*
+!api/uploads/.gitkeep
