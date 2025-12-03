@@ -17,10 +17,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
     exit();
 }
 
-class Database {
+class Database
+{
     // Credenciales de base de datos (desde tu .env)
     private $host = "186.22.245.92";
-    private $db_name = "ifts14c8_db";
+    private $db_name = "ifts14c8_dev";
     private $username = "ifts14c8";
     private $password = "pb9V5tbhvE9kBPW";
     public $conn;
@@ -28,9 +29,10 @@ class Database {
     /**
      * Obtener conexión a la base de datos
      */
-    public function getConnection() {
+    public function getConnection()
+    {
         $this->conn = null;
-        
+
         try {
             $this->conn = new PDO(
                 "mysql:host=" . $this->host . ";dbname=" . $this->db_name . ";charset=utf8mb4",
@@ -39,7 +41,7 @@ class Database {
             );
             $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             $this->conn->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
-        } catch(PDOException $e) {
+        } catch (PDOException $e) {
             http_response_code(500);
             echo json_encode(array(
                 "error" => true,
@@ -48,7 +50,7 @@ class Database {
             ));
             exit();
         }
-        
+
         return $this->conn;
     }
 }
