@@ -1,53 +1,41 @@
 <?php
-/**
- * API: Obtener un anuncio especÃ­fico
- * GET /api/anuncios/get.php?id=X
- */
+header("Access-Control-Allow-Origin: http://localhost:4200");
+header("Access-Control-Allow-Credentials: true");
+header("Access-Control-Allow-Headers: Content-Type, Authorization, X-Requested-With");
+header("Access-Control-Allow-Methods: GET, OPTIONS");
 
-require_once '../config/database.php';
+if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
+    http_response_code(200);
+    exit;
+}
 
 header("Content-Type: application/json; charset=UTF-8");
 
-$database = new Database();
-$db = $database->getConnection();
-
-$id = isset($_GET['id']) ? $_GET['id'] : null;
-
-if (!$id) {
-    http_response_code(400);
-    echo json_encode(array(
-        "error" => true,
-        "message" => "ID es requerido"
-    ));
-    exit();
-}
-
-$query = "SELECT * FROM anuncios WHERE id = :id";
+require_once $_SERVER['DOCUMENT_ROOT'] . '/api/config/database.php';
 
 try {
-    $stmt = $db->prepare($query);
+    $database = new Database();
+    $db = $database->getConnection();
+
+    $id = isset($_GET['id']) ? intval($_GET['id']) : 0;
+
+    if ($id <= 0) {
+        throw new Exception("ID inv¨¢lido");
+    }
+
+    $stmt = $db->prepare("SELECT * FROM anuncios WHERE id = :id LIMIT 1");
     $stmt->bindParam(":id", $id, PDO::PARAM_INT);
     $stmt->execute();
 
-    $anuncio = $stmt->fetch();
+    $anuncio = $stmt->fetch(PDO::FETCH_ASSOC);
 
-    if ($anuncio) {
-        http_response_code(200);
-        echo json_encode($anuncio);
-    } else {
-        http_response_code(404);
-        echo json_encode(array(
-            "error" => true,
-            "message" => "Anuncio no encontrado"
-        ));
-    }
+    echo json_encode($anuncio ?: []);
 
-} catch (PDOException $e) {
+} catch (Exception $e) {
     http_response_code(500);
-    echo json_encode(array(
+    echo json_encode([
         "error" => true,
         "message" => "Error al obtener anuncio",
         "details" => $e->getMessage()
-    ));
+    ], JSON_UNESCAPED_UNICODE);
 }
-?>

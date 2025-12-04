@@ -1,33 +1,26 @@
-# Habilitar CORS para permitir peticiones desde Angular
-Header set Access-Control-Allow-Origin "*"
-Header set Access-Control-Allow-Methods "GET, POST, PUT, DELETE, OPTIONS"
-Header set Access-Control-Allow-Headers "Content-Type, Authorization"
+# ======================================================
+# CORS HABILITADO PARA ANGULAR LOCAL (localhost:4200)
+# ======================================================
+<IfModule mod_headers.c>
+    Header always set Access-Control-Allow-Origin "http://localhost:4200"
+    Header always set Access-Control-Allow-Credentials "true"
+    Header always set Access-Control-Allow-Methods "GET, POST, PUT, DELETE, OPTIONS"
+    Header always set Access-Control-Allow-Headers "Content-Type, Authorization, X-Requested-With"
+    Header always set Access-Control-Max-Age "86400"
+</IfModule>
 
-# Habilitar mod_rewrite
+# ======================================================
+# PERMITIR PRE-FLIGHT OPTIONS (angular)
+# ======================================================
 RewriteEngine On
-
-# Manejar preflight requests
 RewriteCond %{REQUEST_METHOD} OPTIONS
 RewriteRule ^(.*)$ $1 [R=200,L]
 
-# Proteger archivos de configuración
-<Files "database.php">
-    Order allow,deny
-    Deny from all
-</Files>
-
-# Permitir acceso a archivos PHP de la API
-<FilesMatch "\.(php)$">
-    Order allow,deny
-    Allow from all
-</FilesMatch>
-
-# Configuración de seguridad
-<IfModule mod_headers.c>
-    Header set X-Content-Type-Options "nosniff"
-    Header set X-Frame-Options "SAMEORIGIN"
-    Header set X-XSS-Protection "1; mode=block"
+# ======================================================
+# PHP HANDLER (cpanel autogenerado)
+# ======================================================
+<IfModule mime_module>
+  AddHandler application/x-httpd-ea-php81 .php .php8 .phtml
 </IfModule>
 
-# Configuración de charset
-AddDefaultCharset UTF-8
+

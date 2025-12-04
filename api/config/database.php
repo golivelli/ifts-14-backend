@@ -1,12 +1,6 @@
 <?php
-/**
- * Configuración de Base de Datos - IFTS 14
- * VERSIÓN CORREGIDA
- */
-
 class Database
 {
-    // USAR ESTOS VALORES EXACTOS:
     private $host = "localhost";
     private $db_name = "ifts14c8_dev";
     private $username = "ifts14c8";
@@ -23,13 +17,18 @@ class Database
                 $this->username,
                 $this->password
             );
+
             $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             $this->conn->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
-            
-            return $this->conn;
-            
+
         } catch (PDOException $e) {
-            throw new Exception("Error de conexion a BD: " . $e->getMessage());
+            // Nunca exponer errores sensibles en producción
+            http_response_code(500);
+            echo json_encode(["error" => "Error de conexión a la base de datos"]);
+            exit();
         }
+
+        return $this->conn;
     }
-}   
+}
+?>
