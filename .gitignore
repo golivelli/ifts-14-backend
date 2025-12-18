@@ -25,3 +25,12 @@ api/uploads/*
 # Documentación con información sensible
 *.md
 !.gitkeep
+
+# PHP / Composer
+vendor/
+composer.lock
+
+# Logs locales
+storage/logs/
+*.log
+

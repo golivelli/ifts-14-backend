@@ -59,13 +59,28 @@ CREATE TABLE IF NOT EXISTS anuncios (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ==========================================
--- 3. INSERCIÓN DE DATOS BASE (Carreras y Profesores)
+-- 3. TABLA DE CONSULTAS DE CONTACTO
+-- ==========================================
+
+CREATE TABLE IF NOT EXISTS contact_messages (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  nombre VARCHAR(150) NOT NULL,
+  email VARCHAR(150) NOT NULL,
+  telefono VARCHAR(40),
+  motivo VARCHAR(100),
+  mensaje TEXT NOT NULL,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- ==========================================
+-- 4. INSERCIÓN DE DATOS BASE (Carreras y Profesores)
 -- ==========================================
 
 -- Insertar Carreras
 INSERT INTO Carreras (id_carrera, nombre) VALUES 
 (1, 'Sistemas Embebidos e IoT'),
-(2, 'Eficiencia Energética');
+(2, 'Eficiencia Energética'),
+(3, 'Sin carrera específica');
 
 -- Insertar Profesores (Lista unificada)
 INSERT INTO Profesores (nombre_completo) VALUES 
@@ -92,7 +107,7 @@ INSERT INTO Profesores (nombre_completo) VALUES
 ('Fuentes, C. / Pons, F. / Schvartz, S.'); -- 21 (Cátedra compartida)
 
 -- ==========================================
--- 4. INSERCIÓN DE MATERIAS Y HORARIOS
+-- 5. INSERCIÓN DE MATERIAS Y HORARIOS
 -- ==========================================
 
 -- CARRERA: SISTEMAS EMBEBIDOS (ID 1)
@@ -201,7 +216,7 @@ INSERT INTO Horarios (id_materia, id_profesor, dia_semana, hora_inicio, hora_fin
 (29, 19, 'Viernes', '18:00', '22:15');   -- Pract III / Fuentes
 
 -- ==========================================
--- 5. INSERTAR ANUNCIO DE EJEMPLO
+-- 6. INSERTAR ANUNCIO DE EJEMPLO
 -- ==========================================
 
 INSERT INTO anuncios (titulo, contenido, estado, destacado) VALUES
