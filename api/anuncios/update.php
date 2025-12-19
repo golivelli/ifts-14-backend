@@ -37,7 +37,7 @@ try {
     $data = json_decode(file_get_contents("php://input"), true);
 
     if (!$data || !isset($data['id'])) {
-        throw new Exception("Datos inválidos");
+        throw new Exception("Datos invalidos");
     }
 
     $stmt = $db->prepare("SELECT * FROM anuncios WHERE id = :id LIMIT 1");
@@ -55,6 +55,15 @@ try {
     $destacado = isset($data['destacado']) ? (int)$data['destacado'] : (int)$anuncio['destacado'];
     $imagenUrl = array_key_exists('imagen_url', $data) ? $data['imagen_url'] : $anuncio['imagen_url'];
     $idCarrera = array_key_exists('id_carrera', $data) ? $data['id_carrera'] : $anuncio['id_carrera'];
+    $autor = array_key_exists('autor', $data) ? trim($data['autor']) : $anuncio['autor'];
+
+    $estados_validos = ['borrador', 'publicado', 'archivado'];
+    if (!in_array($estado, $estados_validos, true)) {
+        $estado = $anuncio['estado'];
+    }
+    if ($autor === '') {
+        $autor = $anuncio['autor'];
+    }
 
     $query = "UPDATE anuncios SET
                 titulo = :titulo,
@@ -62,7 +71,8 @@ try {
                 imagen_url = :imagen_url,
                 estado = :estado,
                 id_carrera = :id_carrera,
-                destacado = :destacado
+                destacado = :destacado,
+                autor = :autor
               WHERE id = :id";
 
     $stmt = $db->prepare($query);
@@ -72,6 +82,7 @@ try {
     $stmt->bindParam(":contenido", $contenido);
     $stmt->bindParam(":estado", $estado);
     $stmt->bindParam(":destacado", $destacado, PDO::PARAM_INT);
+    $stmt->bindParam(":autor", $autor);
 
     if ($imagenUrl === null || $imagenUrl === '') {
         $stmt->bindValue(":imagen_url", null, PDO::PARAM_NULL);
