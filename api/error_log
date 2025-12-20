@@ -1,0 +1,32 @@
+[07-Nov-2025 20:15:22 UTC] PHP Parse error:  syntax error, unexpected variable "$conn" in /home/ifts14c8/public_html/api/crear_post.php on line 61
+[07-Nov-2025 20:20:39 UTC] PHP Parse error:  syntax error, unexpected variable "$conn" in /home/ifts14c8/public_html/api/crear_post.php on line 64
+[07-Nov-2025 20:20:56 UTC] PHP Parse error:  syntax error, unexpected variable "$conn" in /home/ifts14c8/public_html/api/crear_post.php on line 61
+[14-Nov-2025 20:19:31 UTC] PHP Parse error:  syntax error, unexpected single-quoted string "db.php" in /home/ifts14c8/public_html/api/update_post.php on line 5
+[14-Nov-2025 20:21:13 UTC] PHP Parse error:  syntax error, unexpected single-quoted string "db.php" in /home/ifts14c8/public_html/api/update_post.php on line 5
+[14-Nov-2025 20:22:23 UTC] PHP Parse error:  syntax error, unexpected single-quoted string "db.php" in /home/ifts14c8/public_html/api/update_post.php on line 5
+[14-Nov-2025 20:22:35 UTC] PHP Parse error:  syntax error, unexpected single-quoted string "db.php" in /home/ifts14c8/public_html/api/update_post.php on line 5
+[14-Nov-2025 20:23:07 UTC] PHP Parse error:  syntax error, unexpected single-quoted string "db.php" in /home/ifts14c8/public_html/api/update_post.php on line 6
+[03-Dec-2025 07:33:54 UTC] PHP Warning:  require_once(../config/database.php): Failed to open stream: No such file or directory in /home/ifts14c8/public_html/api/test-db.php on line 18
+[03-Dec-2025 07:33:54 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '../config/database.php' (include_path='.:/opt/cpanel/ea-php81/root/usr/share/pear') in /home/ifts14c8/public_html/api/test-db.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/ifts14c8/public_html/api/test-db.php on line 18
+[03-Dec-2025 07:35:26 UTC] PHP Fatal error:  Uncaught Exception: Error de conexi¨®n a BD: SQLSTATE[HY000] [1045] Access denied for user 'ifts14c8_user'@'localhost' (using password: YES) in /home/ifts14c8/public_html/api/config/database.php:27
+Stack trace:
+#0 /home/ifts14c8/public_html/api/debug_tables.php(8): Database->getConnection()
+#1 {main}
+  thrown in /home/ifts14c8/public_html/api/config/database.php on line 27
+[03-Dec-2025 07:36:01 UTC] PHP Fatal error:  Uncaught Exception: Error de conexi¨®n a BD: SQLSTATE[HY000] [1045] Access denied for user 'ifts14c8_user'@'localhost' (using password: YES) in /home/ifts14c8/public_html/api/config/database.php:27
+Stack trace:
+#0 /home/ifts14c8/public_html/api/debug_tables.php(8): Database->getConnection()
+#1 {main}
+  thrown in /home/ifts14c8/public_html/api/config/database.php on line 27
+[03-Dec-2025 07:36:06 UTC] PHP Warning:  require_once(../config/database.php): Failed to open stream: No such file or directory in /home/ifts14c8/public_html/api/test-db.php on line 18
+[03-Dec-2025 07:36:06 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '../config/database.php' (include_path='.:/opt/cpanel/ea-php81/root/usr/share/pear') in /home/ifts14c8/public_html/api/test-db.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/ifts14c8/public_html/api/test-db.php on line 18
+[04-Dec-2025 04:52:20 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function opcache_reset() in /home/ifts14c8/public_html/api/reset.php:2
+Stack trace:
+#0 {main}
+  thrown in /home/ifts14c8/public_html/api/reset.php on line 2

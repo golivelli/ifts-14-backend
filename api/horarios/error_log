@@ -1,0 +1,11 @@
+[03-Dec-2025 07:43:56 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/ifts14c8/public_html/api/horarios/test.php:1) in /home/ifts14c8/public_html/api/horarios/test.php on line 8
+[03-Dec-2025 07:43:56 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/ifts14c8/public_html/api/horarios/test.php:1) in /home/ifts14c8/public_html/api/horarios/test.php on line 9
+[03-Dec-2025 07:43:56 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/ifts14c8/public_html/api/horarios/test.php:1) in /home/ifts14c8/public_html/api/horarios/test.php on line 10
+[03-Dec-2025 07:44:02 UTC] PHP Fatal error:  Uncaught Exception: Error de conexi¨®n a BD: SQLSTATE[HY000] [1045] Access denied for user 'ifts14c8_user'@'localhost' (using password: YES) in /home/ifts14c8/public_html/api/config/database.php:27
+Stack trace:
+#0 /home/ifts14c8/public_html/api/horarios/debug.php(10): Database->getConnection()
+#1 {main}
+  thrown in /home/ifts14c8/public_html/api/config/database.php on line 27
+[03-Dec-2025 08:01:05 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/ifts14c8/public_html/api/config/database.php:37) in /home/ifts14c8/public_html/api/horarios/index.php on line 33
+[03-Dec-2025 08:03:49 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/ifts14c8/public_html/api/config/database.php:37) in /home/ifts14c8/public_html/api/horarios/index.php on line 45
+[03-Dec-2025 08:04:04 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/ifts14c8/public_html/api/config/database.php:37) in /home/ifts14c8/public_html/api/horarios/index.php on line 45

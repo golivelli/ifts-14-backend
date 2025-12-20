@@ -1,5 +1,16 @@
 <?php
-header("Access-Control-Allow-Origin: http://localhost:4200");
+$allowed_origins = [
+    'https://ifts14.com.ar',
+    'https://www.ifts14.com.ar',
+    'http://localhost:4200',
+    'http://localhost'
+];
+
+$http_origin = $_SERVER['HTTP_ORIGIN'] ?? '';
+if (in_array($http_origin, $allowed_origins, true)) {
+    header("Access-Control-Allow-Origin: " . $http_origin);
+}
+
 header("Access-Control-Allow-Credentials: true");
 header("Access-Control-Allow-Headers: Content-Type, Authorization, X-Requested-With");
 header("Access-Control-Allow-Methods: GET, OPTIONS");
@@ -20,7 +31,7 @@ try {
     $id = isset($_GET['id']) ? intval($_GET['id']) : 0;
 
     if ($id <= 0) {
-        throw new Exception("ID inv¨¢lido");
+        throw new Exception("ID invÅ¯Ëlido");
     }
 
     $stmt = $db->prepare("SELECT * FROM anuncios WHERE id = :id LIMIT 1");
@@ -39,3 +50,4 @@ try {
         "details" => $e->getMessage()
     ], JSON_UNESCAPED_UNICODE);
 }
+

@@ -1,0 +1,12 @@
+[27-Nov-2025 03:04:08 UTC] PHP Warning:  require(db.php): Failed to open stream: No such file or directory in /home/ifts14c8/public_html/api/posts/get_post.php on line 8
+[27-Nov-2025 03:04:08 UTC] PHP Warning:  require(db.php): Failed to open stream: No such file or directory in /home/ifts14c8/public_html/api/posts/get_post.php on line 8
+[27-Nov-2025 03:04:08 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'db.php' (include_path='.:/opt/cpanel/ea-php81/root/usr/share/pear') in /home/ifts14c8/public_html/api/posts/get_post.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/ifts14c8/public_html/api/posts/get_post.php on line 8
+[27-Nov-2025 03:04:35 UTC] PHP Warning:  require(db.php): Failed to open stream: No such file or directory in /home/ifts14c8/public_html/api/posts/get_post.php on line 8
+[27-Nov-2025 03:04:35 UTC] PHP Warning:  require(db.php): Failed to open stream: No such file or directory in /home/ifts14c8/public_html/api/posts/get_post.php on line 8
+[27-Nov-2025 03:04:35 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'db.php' (include_path='.:/opt/cpanel/ea-php81/root/usr/share/pear') in /home/ifts14c8/public_html/api/posts/get_post.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/ifts14c8/public_html/api/posts/get_post.php on line 8

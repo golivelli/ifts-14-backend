@@ -1,0 +1,45 @@
+[26-Nov-2025 19:02:51 UTC] PHP Warning:  require_once(db.php): Failed to open stream: No such file or directory in /home/ifts14c8/public_html/api/materias/get_materia.php on line 4
+[26-Nov-2025 19:02:51 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'db.php' (include_path='.:/opt/cpanel/ea-php81/root/usr/share/pear') in /home/ifts14c8/public_html/api/materias/get_materia.php:4
+Stack trace:
+#0 {main}
+  thrown in /home/ifts14c8/public_html/api/materias/get_materia.php on line 4
+[26-Nov-2025 19:07:03 UTC] PHP Warning:  require_once(db.php): Failed to open stream: No such file or directory in /home/ifts14c8/public_html/api/materias/get_materias.php on line 4
+[26-Nov-2025 19:07:03 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'db.php' (include_path='.:/opt/cpanel/ea-php81/root/usr/share/pear') in /home/ifts14c8/public_html/api/materias/get_materias.php:4
+Stack trace:
+#0 {main}
+  thrown in /home/ifts14c8/public_html/api/materias/get_materias.php on line 4
+[26-Nov-2025 19:11:59 UTC] PHP Warning:  require_once(db.php): Failed to open stream: No such file or directory in /home/ifts14c8/public_html/api/materias/get_materias.php on line 4
+[26-Nov-2025 19:11:59 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'db.php' (include_path='.:/opt/cpanel/ea-php81/root/usr/share/pear') in /home/ifts14c8/public_html/api/materias/get_materias.php:4
+Stack trace:
+#0 {main}
+  thrown in /home/ifts14c8/public_html/api/materias/get_materias.php on line 4
+[26-Nov-2025 19:13:05 UTC] PHP Warning:  require_once(db.php): Failed to open stream: No such file or directory in /home/ifts14c8/public_html/api/materias/get_materias.php on line 4
+[26-Nov-2025 19:13:05 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'db.php' (include_path='.:/opt/cpanel/ea-php81/root/usr/share/pear') in /home/ifts14c8/public_html/api/materias/get_materias.php:4
+Stack trace:
+#0 {main}
+  thrown in /home/ifts14c8/public_html/api/materias/get_materias.php on line 4
+[26-Nov-2025 19:16:58 UTC] PHP Warning:  require_once(db.php): Failed to open stream: No such file or directory in /home/ifts14c8/public_html/api/materias/get_materias.php on line 4
+[26-Nov-2025 19:16:58 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'db.php' (include_path='.:/opt/cpanel/ea-php81/root/usr/share/pear') in /home/ifts14c8/public_html/api/materias/get_materias.php:4
+Stack trace:
+#0 {main}
+  thrown in /home/ifts14c8/public_html/api/materias/get_materias.php on line 4
+[26-Nov-2025 19:17:19 UTC] PHP Warning:  require_once(db.php): Failed to open stream: No such file or directory in /home/ifts14c8/public_html/api/materias/get_materias.php on line 4
+[26-Nov-2025 19:17:19 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'db.php' (include_path='.:/opt/cpanel/ea-php81/root/usr/share/pear') in /home/ifts14c8/public_html/api/materias/get_materias.php:4
+Stack trace:
+#0 {main}
+  thrown in /home/ifts14c8/public_html/api/materias/get_materias.php on line 4
+[26-Nov-2025 19:33:37 UTC] PHP Warning:  require_once(./api/db.php): Failed to open stream: No such file or directory in /home/ifts14c8/public_html/api/materias/get_materias.php on line 4
+[26-Nov-2025 19:33:37 UTC] PHP Fatal error:  Uncaught Error: Failed opening required './api/db.php' (include_path='.:/opt/cpanel/ea-php81/root/usr/share/pear') in /home/ifts14c8/public_html/api/materias/get_materias.php:4
+Stack trace:
+#0 {main}
+  thrown in /home/ifts14c8/public_html/api/materias/get_materias.php on line 4
+[26-Nov-2025 19:34:27 UTC] PHP Warning:  require_once(./api/db.php): Failed to open stream: No such file or directory in /home/ifts14c8/public_html/api/materias/get_materias.php on line 4
+[26-Nov-2025 19:34:27 UTC] PHP Fatal error:  Uncaught Error: Failed opening required './api/db.php' (include_path='.:/opt/cpanel/ea-php81/root/usr/share/pear') in /home/ifts14c8/public_html/api/materias/get_materias.php:4
+Stack trace:
+#0 {main}
+  thrown in /home/ifts14c8/public_html/api/materias/get_materias.php on line 4
+[26-Nov-2025 19:37:25 UTC] PHP Warning:  require_once(db.php): Failed to open stream: No such file or directory in /home/ifts14c8/public_html/api/materias/crear_materias.php on line 10
+[26-Nov-2025 19:37:25 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'db.php' (include_path='.:/opt/cpanel/ea-php81/root/usr/share/pear') in /home/ifts14c8/public_html/api/materias/crear_materias.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/ifts14c8/public_html/api/materias/crear_materias.php on line 10

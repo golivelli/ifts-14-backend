@@ -1,24 +1,21 @@
 <?php
 ob_start();
 
-header("Access-Control-Allow-Credentials: true");
-header("Access-Control-Allow-Headers: Content-Type, Authorization, X-Requested-With");
-header("Access-Control-Allow-Methods: PUT, OPTIONS");
-
 $allowed_origins = [
-    'http://localhost:4200',
-    'http://localhost',
+    'https://ifts14.com.ar',
     'https://www.ifts14.com.ar',
-    'https://ifts14.com.ar'
+    'http://localhost:4200',
+    'http://localhost'
 ];
 
 $http_origin = $_SERVER['HTTP_ORIGIN'] ?? '';
-
-if (in_array($http_origin, $allowed_origins)) {
+if (in_array($http_origin, $allowed_origins, true)) {
     header("Access-Control-Allow-Origin: " . $http_origin);
-} else if (empty($http_origin)) {
-    header("Access-Control-Allow-Origin: *");
 }
+
+header("Access-Control-Allow-Credentials: true");
+header("Access-Control-Allow-Headers: Content-Type, Authorization, X-Requested-With");
+header("Access-Control-Allow-Methods: PUT, OPTIONS");
 
 if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
     ob_end_clean();
@@ -111,3 +108,4 @@ try {
         "details" => $e->getMessage()
     ], JSON_UNESCAPED_UNICODE);
 }
+

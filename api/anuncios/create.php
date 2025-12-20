@@ -1,8 +1,16 @@
 <?php
-// -------------------------
-// CORS
-// -------------------------
-header("Access-Control-Allow-Origin: *");
+$allowed_origins = [
+    'https://ifts14.com.ar',
+    'https://www.ifts14.com.ar',
+    'http://localhost:4200',
+    'http://localhost'
+];
+
+$http_origin = $_SERVER['HTTP_ORIGIN'] ?? '';
+if (in_array($http_origin, $allowed_origins, true)) {
+    header("Access-Control-Allow-Origin: " . $http_origin);
+}
+
 header("Access-Control-Allow-Credentials: true");
 header("Access-Control-Allow-Methods: POST, OPTIONS");
 header("Access-Control-Allow-Headers: Content-Type, Authorization, X-Requested-With");
@@ -86,3 +94,4 @@ try {
         "details" => $e->getMessage()
     ]);
 }
+
